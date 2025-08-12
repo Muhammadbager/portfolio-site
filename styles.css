@@ -1,0 +1,271 @@
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fa;
+    line-height: 1.7;
+    color: #222;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    text-align: center;
+    color: #2a3a4d;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 32px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2a3a4d;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #0078d4;
+    background-color: #f0f4fa;
+    outline: none;
+}
+
+main {
+    margin-top: 100px;
+}
+
+#about-me {
+    text-align: center;
+    padding: 48px 16px 32px 16px;
+}
+
+#about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    color: #2a3a4d;
+}
+
+#about-me p {
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    color: #444;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 16px;
+    align-items: center;
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: #2a3a4d;
+}
+
+#projects article {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+#projects figure {
+    margin: 0;
+    text-align: center;
+}
+
+#projects img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+#projects figcaption {
+    font-weight: 500;
+    color: #0078d4;
+    margin-top: 8px;
+}
+
+#skills {
+    padding: 32px 16px;
+}
+
+#skills h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2a3a4d;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#skills li {
+    position: relative;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 22px 10px 38px;
+    font-size: 1rem;
+    color: #2a3a4d;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s, color 0.2s;
+    cursor: default;
+}
+
+#skills li::before {
+    content: '\2713';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0078d4;
+    font-size: 1.1em;
+}
+
+#skills li:hover {
+    background: #f0f4fa;
+    color: #0078d4;
+}
+
+#contact {
+    padding: 32px 16px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2a3a4d;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contact label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #2a3a4d;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    font-size: 1rem;
+    background: #f7f9fa;
+    color: #222;
+    resize: vertical;
+    margin-bottom: 4px;
+    transition: border-color 0.2s;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #0078d4;
+    outline: none;
+}
+
+#contact button[type="submit"] {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+#contact button[type="submit"]:hover,
+#contact button[type="submit"]:focus {
+    background: #005fa3;
+}
+
+/* Responsive styles for tablets and below */
+@media (max-width: 768px) {
+    header {
+        padding: 16px 0 8px 0;
+    }
+    header h1 {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    main {
+        margin-top: 120px;
+    }
+    #projects {
+        gap: 20px;
+        padding: 24px 8px;
+    }
+    #projects article {
+        max-width: 100%;
+        width: 100%;
+        padding: 16px;
+    }
+    #skills ul {
+        gap: 10px;
+    }
+    #contact {
+        padding: 24px 8px;
+        max-width: 100%;
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
