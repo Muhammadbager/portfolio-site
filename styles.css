@@ -70,6 +70,22 @@ a:hover{text-decoration:underline}
   width:38px; height:38px; border-radius:12px; background:var(--card);
   border:1px solid var(--line); box-shadow:var(--pill-shadow)
 }
+/* Make icon color follow the theme (white in dark mode) */
+.icon-pill { 
+  color: var(--text);              /* sets the icon color */
+}
+
+/* SVGs take the current text color */
+.icon-pill svg {
+  fill: currentColor;              /* light in dark mode, dark in light mode */
+  transition: transform .15s, filter .2s;
+}
+
+/* (optional) tiny hover lift */
+.icon-pill:hover svg { 
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
 /* show sun icon only in dark */
 #theme-toggle .icon-sun{display:none; fill:var(--muted)}
 #theme-toggle .icon-moon{display:block; fill:var(--muted)}
@@ -144,3 +160,4 @@ svg{max-width:none; height:auto}
   .pill{ padding:12px 14px; } /* comfy touch targets */
   .hero h1{ font-size:2.2rem; }
 }
+
