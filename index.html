@@ -1,94 +1,125 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammadbager Al-Ali is a front-end developer specializing in modern, responsive web design. Explore his portfolio, skills, projects, and contact information.">
-    <title>Muhammadbager Al-Ali – Front-End Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Muhammadbager Al-Ali — front-end developer portfolio with projects, skills, and contact form." />
+  <title>Muhammadbager Al-Ali – Front-End Developer</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Muhammadbager Al-Ali – Front-End Developer Portfolio</h1>
-        <nav role="navigation" aria-label="Main Navigation">
-            <ul>
-                <li><a href="#about" tabindex="0">About Me</a></li>
-                <li><a href="#projects" tabindex="0">Projects</a></li>
-                <li><a href="#skills" tabindex="0">Skills</a></li>
-                <li><a href="#contact" tabindex="0">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="nav-wrap">
+      <h1>Muhammadbager Al-Ali – Front-End Developer</h1>
 
-    <main role="main">
-    <section id="about-me">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate web developer with experience in building modern, responsive websites and web applications. I enjoy working with the latest technologies to create user-friendly and visually appealing digital experiences.
-        </p>
-    </section>
+      <!-- Mobile menu toggle -->
+      <button class="hamburger"
+              aria-label="Toggle navigation"
+              aria-controls="main-nav-list"
+              aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+      </button>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form>
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required tabindex="0">
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required tabindex="0">
-            </div>
-            <div>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required tabindex="0"></textarea>
-            </div>
-            <button type="submit" tabindex="0">Send Message</button>
-        </form>
-    </section>
+      <nav role="navigation" aria-label="Main Navigation" data-open="false">
+        <ul id="main-nav-list">
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML5 &amp; CSS3</li>
-            <li>JavaScript &amp; TypeScript</li>
-            <li>React &amp; Redux</li>
-            <li>Node.js &amp; Express</li>
-            <li>Python &amp; Django</li>
-            <li>Bootstrap &amp; Tailwind CSS</li>
-            <li>Git &amp; Version Control</li>
-            <li>Responsive Web Design</li>
-            <li>RESTful APIs</li>
-            <li>Problem Solving</li>
+          <!-- LinkedIn icon -->
+          <li class="social">
+            <a class="icon-link"
+               href="https://www.linkedin.com/in/muhammadbager-al-ali/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open my LinkedIn profile (opens in a new tab)">
+              <svg viewBox="0 0 448 512" width="22" height="22" aria-hidden="true">
+                <path d="M100.28 448H7.4V148.9h92.88zM53.84 108.5A54.22 54.22 0 1 1 54.28 0a54.22 54.22 0 1 1-.44 108.5zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.8V448h-92.7V148.9h89V184h1.3c12.4-23.6 42.5-48.3 87.5-48.3 93.6 0 110.8 61.6 110.8 141.6V448z"/>
+              </svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+          </li>
         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I’m a passionate web developer focused on building modern, responsive
+        websites and web apps. I love turning ideas into clean, accessible
+        interfaces that work beautifully on any device.
+      </p>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <article>
-            <figure>
-                <img src="project1.jpg" alt="Portfolio Website screenshot showing homepage and featured projects">
-                <figcaption>Portfolio Website</figcaption>
-            </figure>
-            <p>A personal portfolio website showcasing my skills, experience, and projects using HTML, CSS, and JavaScript.</p>
-        </article>
-        <article>
-            <figure>
-                <img src="project2.jpg" alt="E-commerce Store screenshot displaying product listings and shopping cart">
-                <figcaption>E-commerce Store</figcaption>
-            </figure>
-            <p>An online store built with React and Node.js, featuring product listings, shopping cart, and secure checkout.</p>
-        </article>
-        <article>
-            <figure>
-                <img src="project3.jpg" alt="Blog Platform screenshot showing blog posts and editor interface">
-                <figcaption>Blog Platform</figcaption>
-            </figure>
-            <p>A modern blog platform allowing users to create, edit, and share posts, built with Django and Bootstrap.</p>
-        </article>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+
+      <!-- Add/replace images with your own files -->
+      <article data-category="frontend">
+        <figure>
+          <img src="project1.jpg" alt="Portfolio Website screenshot showing homepage and featured projects" />
+          <figcaption>Portfolio Website</figcaption>
+        </figure>
+        <p>A personal portfolio site using HTML, CSS, and JavaScript.</p>
+      </article>
+
+      <article data-category="fullstack">
+        <figure>
+          <img src="project2.jpg" alt="E-commerce Store screenshot displaying product listings and shopping cart" />
+          <figcaption>E-commerce Store</figcaption>
+        </figure>
+        <p>React + Node.js shop with product listings, cart, and checkout.</p>
+      </article>
+
+      <article data-category="backend">
+        <figure>
+          <img src="project3.jpg" alt="Blog Platform screenshot showing posts and editor interface" />
+          <figcaption>Blog Platform</figcaption>
+        </figure>
+        <p>Django-based blog with an editor and post management.</p>
+      </article>
     </section>
 
-    </main>
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5 &amp; CSS3</li>
+        <li>JavaScript &amp; TypeScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>Python &amp; Django</li>
+        <li>Tailwind / Bootstrap</li>
+        <li>Git &amp; GitHub</li>
+        <li>Responsive Design</li>
+        <li>REST APIs</li>
+        <li>Problem Solving</li>
+      </ul>
+    </section>
 
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+        <div id="form-live" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
-
