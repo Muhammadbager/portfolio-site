@@ -26,7 +26,8 @@ a:hover{text-decoration:underline}
   backdrop-filter:saturate(140%) blur(6px);
 }
 .nav-inner{
-  max-width:1100px; margin:0 auto; padding:10px 16px;
+  /* full-bleed header so the bubbles can span the page */
+  max-width:none; margin:0 auto; padding:10px 16px;
   display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:center;
 }
 
@@ -37,12 +38,31 @@ a:hover{text-decoration:underline}
 }
 .brand-logo{font-variant-caps:all-small-caps}
 
-/* Pills */
-.pill-nav{display:flex; gap:14px; align-items:center; margin:0; padding:0; list-style:none}
-.pill{display:inline-block; padding:8px 14px; border-radius:999px; background:var(--card);
-  box-shadow:var(--pill-shadow); color:var(--text); font-weight:600}
-.pill:hover{transform:translateY(-1px)}
-.hamburger{display:none; padding:8px 10px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--text)}
+/* let the center nav take the available space */
+#main-nav { width: 100%; }
+
+/* EVENLY SPACED, RESPONSIVE BUBBLES */
+.pill-nav{
+  display:grid;
+  /* 3 columns on wide screens, 2 on tablets, 1 if tight */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap:18px;
+  align-items:center;
+  justify-items:stretch;
+  margin:0; padding:0; list-style:none;
+}
+.pill{
+  display:flex; align-items:center; justify-content:center;
+  width:100%; padding:10px 16px;
+  border-radius:999px; background:var(--card);
+  box-shadow:var(--pill-shadow); color:var(--text); font-weight:600;
+}
+.pill:hover{ transform: translateY(-1px); }
+
+.hamburger{
+  display:none; padding:8px 10px; border-radius:10px;
+  border:1px solid var(--line); background:var(--card); color:var(--text);
+}
 
 .nav-actions{display:flex; align-items:center; gap:10px}
 .icon-pill{
@@ -104,11 +124,23 @@ section{scroll-margin-top:96px}
 /* Prevent inline SVGs from blowing up */
 svg{max-width:none; height:auto}
 
-/* Mobile nav */
+/* MOBILE */
 @media (max-width: 768px){
-  .hamburger{display:inline-flex}
-  #main-nav[data-open="false"]{display:none}
-  #main-nav[data-open="true"]{display:block}
-  .pill-nav{flex-direction:column; align-items:flex-start; padding-block:8px}
-  .hero h1{font-size:2.2rem}
+  /* show the hamburger */
+  .hamburger{
+    display:inline-flex; align-items:center; justify-content:center;
+  }
+
+  /* dropdown behavior */
+  #main-nav[data-open="false"] { display:none; }
+  #main-nav[data-open="true"]  { display:block; }
+
+  /* stack bubbles 1 per row in dropdown */
+  #main-nav[data-open="true"] .pill-nav{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .pill{ padding:12px 14px; } /* comfy touch targets */
+  .hero h1{ font-size:2.2rem; }
 }
