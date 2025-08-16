@@ -33,6 +33,7 @@
       btn.setAttribute("aria-expanded", String(!open));
     });
   }
+
   function closeMenuOnLinkClick() {
     const nav = document.getElementById("main-nav");
     if (!nav) return;
