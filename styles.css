@@ -68,25 +68,27 @@ a:hover{text-decoration:underline}
 .icon-pill{
   display:inline-flex; align-items:center; justify-content:center;
   width:38px; height:38px; border-radius:12px; background:var(--card);
-  border:1px solid var(--line); box-shadow:var(--pill-shadow)
+  border:1px solid var(--line); box-shadow:var(--pill-shadow);
+  color: var(--text);                 /* drives icon color via currentColor */
 }
-/* Make icon color follow the theme (white in dark mode) */
-.icon-pill { 
-  color: var(--text);              /* sets the icon color */
-}
-
-/* SVGs take the current text color */
-.icon-pill svg {
-  fill: currentColor;              /* light in dark mode, dark in light mode */
+.icon-pill svg{
+  fill: currentColor;                 /* dark/light by theme */
   transition: transform .15s, filter .2s;
 }
-
-/* (optional) tiny hover lift */
-.icon-pill:hover svg { 
+.icon-pill:hover svg{
   transform: translateY(-1px);
   filter: brightness(1.1);
 }
-/* show sun icon only in dark */
+
+/* Dark-mode look for the social icon pills (solid white icons) */
+:root.dark .icon-pill{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.14);
+  color: #fff;                        /* currentColor becomes white */
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Theme toggle icons */
 #theme-toggle .icon-sun{display:none; fill:var(--muted)}
 #theme-toggle .icon-moon{display:block; fill:var(--muted)}
 :root.dark #theme-toggle .icon-sun{display:block}
@@ -161,3 +163,11 @@ svg{max-width:none; height:auto}
   .hero h1{ font-size:2.2rem; }
 }
 
+/* Optional: focus outlines for accessibility */
+.pill:focus-visible,
+.icon-pill:focus-visible,
+.hire-btn:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
